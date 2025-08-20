@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Solung Party Invitation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background: #ffe9b0;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 Solung Festival Invitation 🎉</h1>
+  <p>Enter your name to see your invite:</p>
+
+  <input type="text" id="nameInput" placeholder="Enter your name">
+  <button onclick="invite()">Get Invite</button>
+
+  <script>
+    function invite() {
+      let name = document.getElementById("nameInput").value.trim().toLowerCase();
+
+      if (name === "") {
+        alert("😒 Oi, at least type your name!");
+        return;
+      }
+
+      // Custom funny messages (all in lowercase for matching)
+      const specialMessages = {
+        "ojen sir": "Bhai solung mai ajana pr Khane ko kuch khila dunga 🍲",
+        "yasam": "Chuuutt 😁 Solung mai aao daru pilaiga zada nhi tora saa milega 🍻",
+        "nobin": "Sir aao solung mai khana khane iss bar accha hga 🍛",
+        "geba": "Gay sir 😜 Solung mai aao khana khane, Daru toh nhi milega tmko 🚫🍺",
+        "sonam": "Chutpagalu 🤣 Solung ko aao kela 🍌"
+      };
+
+      // Default funny messages for anyone else
+      const defaultMessages = [
+        "You're invited to Solung 🎉 Don’t forget your dancing shoes! 💃🕺",
+        "Guess what? Free snacks await you 🍕🍟",
+        "VIP entry unlocked 🚪✨ See you at Solung!",
+        "Bring your best moves, the DJ is waiting 🎶🔥",
+        "Warning: Solung may cause extreme fun 🤪"
+      ];
+
+      if (specialMessages[name]) {
+        alert(specialMessages[name]);
+      } else {
+        let randomMsg = defaultMessages[Math.floor(Math.random() * defaultMessages.length)];
+        alert("Hey " + name + "! " + randomMsg);
+      }
+    }
+  </script>
+
+</body>
+</html>
